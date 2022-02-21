@@ -25,11 +25,12 @@ main {
 #todo-lists li div {
   border: 1px solid black;
   border-radius: 15px;
-  transition: all 0.3s;
+  transition: border-color 0.3s;
 }
 #todo-lists li div:hover {
-  border-color: gray;
   color: gray;
+  text-decoration: line-through;
+  border-color: var(--white);
 }
 
 #todo-form input {
