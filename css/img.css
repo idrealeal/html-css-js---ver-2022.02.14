@@ -5,7 +5,7 @@ main img {
 
 @media screen and (min-width: 768px) {
   /* main */
-  main .img-p {
+  main section {
     display: flex;
   }
 }

@@ -26,6 +26,8 @@ main {
   border: 1px solid black;
   border-radius: 15px;
   transition: border-color 0.3s;
+
+  cursor: pointer;
 }
 #todo-lists li div:hover {
   color: gray;

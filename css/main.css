@@ -32,11 +32,13 @@ ul {
   list-style: none;
 }
 
+.nav-toggle-btn {
+  cursor: pointer;
+}
 /* header */
 header {
   display: flex;
   flex-flow: column;
-
   align-items: center;
 }
 
@@ -48,7 +50,6 @@ header .logo-image {
   font-size: var(--logo-size);
 }
 header .nav-toggle-btn {
-  display: block;
   position: absolute;
   right: 10px;
   top: 10px;

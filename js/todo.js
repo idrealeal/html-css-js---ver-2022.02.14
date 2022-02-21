@@ -6,40 +6,14 @@ const todoLists = document.querySelector("#todo-lists");
 let saveTodoLists = [];
 let updateTodoLists = [];
 
-// function paintLi(paintList) {
-//   const liTag = document.createElement("li");
-//   const todoTag = document.createElement("span");
-//   const buttonTag = document.createElement("button");
-
-//   liTag.setAttribute("id", paintList.id);
-//   liTag.appendChild(todoTag);
-//   liTag.appendChild(buttonTag);
-
-//   todoTag.innerHTML = paintList.todo;
-//   buttonTag.innerHTML = "X";
-//   todoLists.appendChild(liTag);
-
-//   //add event listener to delete button
-//   buttonTag.addEventListener("click", (event) => {
-//     updateTodoLists = saveTodoLists.filter(
-//       (obj) => obj.id !== parseInt(event.target.parentElement.id)
-//     );
-//     localStorage.setItem("todoLists", JSON.stringify(updateTodoLists));
-//     saveTodoLists = updateTodoLists;
-
-//     const deleteLiTag = event.target.parentElement;
-//     deleteLiTag.remove();
-//   });
-// }
-
-function paintLi(paintList) {
+function paintLi(paintObj) {
   const liTag = document.createElement("li");
   const todoTag = document.createElement("div");
 
-  liTag.setAttribute("id", paintList.id);
+  liTag.setAttribute("id", paintObj.id);
   liTag.appendChild(todoTag);
 
-  todoTag.innerHTML = paintList.todo;
+  todoTag.innerHTML = paintObj.todo;
   todoLists.appendChild(liTag);
 
   //add event listener to delete button
@@ -56,14 +30,16 @@ function paintLi(paintList) {
 }
 
 todoForm.addEventListener("submit", (event) => {
+  //새로고침 막기
   event.preventDefault();
+  //입력받은 것을 변수에 저장하기
   const newTodo = todoInput.value;
   todoInput.value = "";
 
-  // save newtodo to localstorage
+  // localstorage에 "저장할 배열(saveTodoLists)"을 저장하기
   saveTodoLists.push({ id: new Date().getTime(), todo: newTodo });
   localStorage.setItem("todoLists", JSON.stringify(saveTodoLists));
-
+  //"saveTodoLists"에서 마지막에 입력받은 값을 "paintLi"에 전달하기
   paintLi(saveTodoLists[saveTodoLists.length - 1]);
 });
 
