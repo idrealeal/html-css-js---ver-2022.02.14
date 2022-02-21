@@ -1,0 +1,47 @@
+#todo-form,
+#todo-lists {
+  text-align: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+}
+.main-content {
+  flex-grow: 1;
+}
+#quote {
+  display: flex;
+  flex-direction: column;
+}
+#todo-lists {
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#todo-lists li {
+  margin: 4px 0;
+}
+#todo-lists li div {
+  border: 1px solid black;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+#todo-lists li div:hover {
+  border-color: gray;
+  color: gray;
+}
+
+#todo-form input {
+  border-radius: 5px;
+  border: 0;
+  text-align: center;
+
+  background-color: var(--gray);
+}
+
+@media screen and (max-width: 700px) {
+  #todo-lists {
+    width: 80%;
+  }
+}
