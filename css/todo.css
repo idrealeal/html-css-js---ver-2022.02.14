@@ -21,15 +21,14 @@ main {
 }
 #todo-lists li {
   margin: 4px 0;
-}
-#todo-lists li div {
   border: 1px solid black;
   border-radius: 15px;
   transition: border-color 0.3s;
 
   cursor: pointer;
 }
-#todo-lists li div:hover {
+
+#todo-lists li:hover {
   color: gray;
   text-decoration: line-through;
   border-color: var(--white);
